@@ -1,0 +1,14 @@
+{
+    "name": "@wmenge/nanotest"
+    "version": "0.0.1"
+    "description": "Lightweight unit tests",
+    "license": "MIT",
+    "repository": "wmenge/nanotest",
+    "main": "index.js",
+    "keywords": [
+        "tiny",
+        "nano",
+        "unit",
+        "test"
+    ]
+}
