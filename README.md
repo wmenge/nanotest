@@ -1,28 +1,36 @@
 Nanotest - Light weight unit tests
 ==================================
 
-Nano test is a very lightweight en very incomplete unit test framework.
+Nanotest is a very lightweight and very incomplete unit test framework.
 
 Installation:
-
 `$ npm install @wmenge/nanotest`
 
 Basic usage:
-
 ```
+const nanotest = require("@wmenge/nanotest");
+
 let testSuite = {
-  someTestCase() {
-      wUnit.assertEquals(2, 1 + 1);
+  someHelperMethod() {
+      // use me to setup or teardown
   },
-  anotherTestCase() {
-      nUnit.assertTrue(1 == 2);
+  // test methods should start with prefix 'test'
+  testCase2() {
+      nanotest.assertEquals(2, 1 + 1);
+  },
+  testCase2() {
+      nanotest.assertTrue(1 == 2);
   }
 }
 
-wUnit.run(testSuite);
+nanotest.run(testSuite);
 ```
-
 Ouptuts:
+```
+nanotest:
+[testanotherTestCase] failed: condition 'false' not true
+2 test(s) run, 1 failed, 1 successfull.
+```
 
 Test results will be output to the console, so you can run tests in both nodejs and browser.
 
