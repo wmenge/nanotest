@@ -17,13 +17,13 @@ var nanotest = {
     }
   },
   assertTrue(condition) {
-    this.assert(condition, 'condition \'' + condition + '\' not true');
+    this.assert(condition, `condition '${condition}' not true`);
   },
   assertEquals(expected, actual) {
-    this.assert((expected === actual), 'actual \'' + actual + '\' not equal to expected \'' + expected + '\'');
+    this.assert((expected === actual), `actual '${actual}' not equal to expected '${expected}'`);
   },
-  assertEqualsArrays(expected, actual) {
-    this.assertEquals(expected.toString(), actual.toString());
+  assertEqualsDeep(expected, actual) {
+    this.assertEquals(JSON.stringify(expected, null, 2), JSON.stringify(actual, null, 2));
   },
   run(tester) { 
     this.init();
